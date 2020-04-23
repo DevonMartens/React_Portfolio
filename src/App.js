@@ -2,6 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Layout, Header, Navigation, Drawer, Content} from 'react-mdl';
+import Main from './components/main';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
@@ -25,6 +27,12 @@ function App() {
         </Drawer>
         <Content />
     </Layout>
+    <Content>
+    <Main> </Main>
+    <Main> </Main>
+    </Content>
+  
+ 
 </div>
   );
 }

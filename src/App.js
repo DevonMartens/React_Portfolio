@@ -9,18 +9,18 @@ function App() {
     <Layout style={{background: 'url(https://cdn2.atlantamagazine.com/wp-content/uploads/sites/4/2020/03/atlantablue_getty.jpg) center / cover'}}>
         <Header transparent title="Devon Martens" style={{color: 'white'}}>
             <Navigation>
-                <a href="#">Link</a>
-                <a href="#">Link</a>
-                <a href="#">Link</a> 
-                <a href="#">Link</a>
+                <a href="#">About Me</a>
+                <a href="#">Projects</a>
+                <a href="#">Resume</a> 
+                <a href="#">Contact</a>
             </Navigation>
         </Header>
-        <Drawer title="Title">
+        <Drawer title="More Content">
             <Navigation>
-                <a href="#">Link</a>
-                <a href="#">Link</a>
-                <a href="#">Link</a>
-                <a href="#">Link</a>
+                <a href="#">About Me</a>
+                <a href="#">Projects</a>
+                <a href="#">Resume</a>
+                <a href="#">Contact</a>
             </Navigation>
         </Drawer>
         <Content />

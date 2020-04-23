@@ -1,12 +1,13 @@
 import React, { Component } from  'react';
-
+import ChartsPage from './skillsGraph';
 
 
 class aboutMe extends Component {
     render() {
     return(
     <div>
-        <h1>All About ME Page</h1>
+   <ChartsPage></ChartsPage>
+        
         </div>
     )
     }

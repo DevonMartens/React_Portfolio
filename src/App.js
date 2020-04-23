@@ -3,6 +3,7 @@ import './App.css';
 import { Layout, Header, Navigation, Drawer, Content} from 'react-mdl';
 import Main from './components/main';
 import { BrowserRouter } from 'react-router-dom';
+import aboutMe from './components/aboutMe';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       }}>
         <Header title="Devon Martens" scroll>
             <Navigation>
-            <a href="#">About Me</a>
+            <a href={aboutMe}>About Me</a>
                 <a href="#">Projects</a>
                 <a href="#">Resume</a> 
                 <a href="#">Contact</a>

@@ -2,15 +2,15 @@ import React, { Component } from  'react';
 
 
 
-class LandingPage extends Component {
+class Projects extends Component {
     render() {
     return(
     <div>
-        <p>Renders accross header</p>
+        <h1>Projects</h1>
         </div>
     )
     }
     
 }
     
-export default LandingPage;
+export default Projects;

@@ -6,7 +6,7 @@ class LandingPage extends Component {
     render() {
     return(
     <div>
-        <p>Renders accross header</p>
+        <p>LandingPage</p>
         </div>
     )
     }

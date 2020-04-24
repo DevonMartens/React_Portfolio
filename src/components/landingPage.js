@@ -1,6 +1,6 @@
 import React, { Component } from  'react';
+import DevonCard from './DevonCard';
 
-import AnimatedTypingComponent from './typing';
  
 
 class LandingPage extends Component {
@@ -8,7 +8,7 @@ class LandingPage extends Component {
     return(
     <div>
         <p></p>
-<AnimatedTypingComponent></AnimatedTypingComponent>
+<DevonCard></DevonCard>
      
         </div>
         

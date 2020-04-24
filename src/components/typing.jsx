@@ -6,5 +6,6 @@ const AnimatedTypingComponent = () => (
       <span>Devon is a Full Stack Developer Based in Atlanta Looking for a Full Time Job</span>
     </Typing>
   );
+  
 
   export default AnimatedTypingComponent;

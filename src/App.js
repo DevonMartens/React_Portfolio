@@ -5,6 +5,7 @@ import Main from './components/main';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'mdbreact/dist/css/mdb.css'
 
 function App() {
   return (
@@ -13,20 +14,20 @@ function App() {
         <Header title="Devon Martens" scroll>
             <Navigation>
               <BrowserRouter>
-            <Link to="/aboutMe">About Me </Link>
-                <Link to="/projects">Projects</Link>
-                <Link to="/resume">Resume</Link> 
-                <Link to="/contact">Contact</Link>
+            <Link className="text-light m-1" to="/aboutMe">About Me </Link>
+                <Link className="text-light m-1" to="/projects">Projects</Link>
+                <Link className="text-light m-1" to="/resume">Resume</Link> 
+                <Link className="text-light m-1" to="/contact">Contact</Link>
                 </BrowserRouter>
             </Navigation>
         </Header>
         <Drawer title="More Content">
             <Navigation>
             <BrowserRouter>
-            <Link to="/aboutMe">About Me </Link>
-                <Link to="/projects">Projects</Link>
-                <Link to="/resume">Resume</Link> 
-                <Link to="/contact">Contact</Link>
+            <Link className="text-dark text-center" to="/aboutMe">About Me </Link>
+                <Link className="text-dark text-center" to="/projects">Projects</Link>
+                <Link className="text-dark text-center" to="/resume">Resume</Link> 
+                <Link className="text-dark text-center" to="/contact">Contact</Link>
                 </BrowserRouter>
             </Navigation>
         </Drawer>

@@ -16,4 +16,4 @@ class Projects extends Component {
       }
 
     
-export default Projects;
+export default new Projects;

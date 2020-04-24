@@ -2,6 +2,7 @@ import React from "react";
 import { Bar } from "react-chartjs-2";
 import { MDBContainer } from "mdbreact";
 import headShot from '../images/0.jpg'
+import AnimatedTypingComponent from './typing';
 
 class ChartsPage extends React.Component {
 
@@ -65,10 +66,10 @@ class ChartsPage extends React.Component {
     return (
         
       <MDBContainer>
-          <img src={headShot} atl="devon"></img>
-        <h3 className="mt-5">Devon's Coding Abilities</h3>
+     
         <Bar data={this.state.dataBar} options={this.state.barChartOptions} />
       </MDBContainer>
+       
     );
   }
 }

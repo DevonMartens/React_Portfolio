@@ -15,11 +15,12 @@ class aboutMe extends Component {
  
    <div className="row">
        <div className="col-3" style={{  
-         background: 'url(https://i.pinimg.com/originals/db/03/96/db039626bfa2ecc53f0f6e7f335aef4c.gif)',
+         background: 'url(https://gifimage.net/wp-content/uploads/2017/10/coding-gif-8.gif)',
          backgroundRepeat: 'none',
+         
          }}>
-             <Container>
-          <img src={headShot} atl="devon"></img>
+             <Container >
+          <img  style ={{opacity: 8 }}src={headShot} atl="devon"></img>
           </Container>
           </div>
         <h3 className="mt-5">Devon's Coding Abilities</h3> 

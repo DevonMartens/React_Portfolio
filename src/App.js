@@ -15,7 +15,7 @@ function App() {
             <Navigation>
               <BrowserRouter>
             <Link to="/aboutMe">About Me </Link>
-                <Link to="/project">Projects</Link>
+                <Link to="/projects">Projects</Link>
                 <Link to="/resume">Resume</Link> 
                 <Link to="/contact">Contact</Link>
                 </BrowserRouter>
@@ -25,7 +25,7 @@ function App() {
             <Navigation>
             <BrowserRouter>
             <Link to="/aboutMe">About Me </Link>
-                <Link to="/project">Projects</Link>
+                <Link to="/projects">Projects</Link>
                 <Link to="/resume">Resume</Link> 
                 <Link to="/contact">Contact</Link>
                 </BrowserRouter>

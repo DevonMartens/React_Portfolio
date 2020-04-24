@@ -1,7 +1,7 @@
 import React, { Component } from  'react';
 import DevonCard from './DevonCard';
 
- 
+ import Projects from './projects';
 
 class LandingPage extends Component {
     render() {
@@ -9,7 +9,7 @@ class LandingPage extends Component {
     <div>
         <p></p>
 <DevonCard></DevonCard>
-     
+     <Projects></Projects>
         </div>
         
     )

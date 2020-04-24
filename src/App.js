@@ -2,8 +2,9 @@ import React from 'react';
 import './App.css';
 import { Layout, Header, Navigation, Drawer, Content} from 'react-mdl';
 import Main from './components/main';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Router } from 'react-router-dom';
 import aboutMe from './components/aboutMe';
+import { Link } from 'react-router-dom';
 
 function App() {
   return (
@@ -13,18 +14,22 @@ function App() {
       }}>
         <Header title="Devon Martens" scroll>
             <Navigation>
-            <a href={aboutMe}>About Me</a>
-                <a href="#">Projects</a>
-                <a href="#">Resume</a> 
-                <a href="#">Contact</a>
+              <BrowserRouter>
+            <Link to="/aboutMe">About Me </Link>
+                <Link to="/project">Projects</Link>
+                <Link to="/resume">Resume</Link> 
+                <Link to="/contact">Contact</Link>
+                </BrowserRouter>
             </Navigation>
         </Header>
         <Drawer title="More Content">
             <Navigation>
-            <a href="#">About Me</a>
-                <a href="#">Projects</a>
-                <a href="#">Resume</a>
-                <a href="#">Contact</a>
+            <BrowserRouter>
+            <Link to="/aboutMe">About Me </Link>
+                <Link to="/project">Projects</Link>
+                <Link to="/resume">Resume</Link> 
+                <Link to="/contact">Contact</Link>
+                </BrowserRouter>
             </Navigation>
         </Drawer>
         <Content>

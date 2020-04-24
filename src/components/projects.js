@@ -1,7 +1,8 @@
 import React, { Component } from  'react';
 
-import { MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from
+import { MDBBtn, MDBCarousel, MDBCarouselCaption, MDBCarouselInner, MDBCarouselItem, MDBView, MDBMask, MDBContainer } from
 "mdbreact";
+import 'mdbreact/dist/css/mdb.css'
 
 
 class Projects extends Component {
@@ -9,10 +10,10 @@ class Projects extends Component {
     return (
 
           <MDBContainer>
-             <hi>There are 8 Project in zt</hi>
+             <h5>There are 4 Projects</h5>
             <MDBCarousel
             activeItem={1}
-            length={3}
+            length={4}
             showControls={true}
             showIndicators={true}
             className="z-depth-1"
@@ -30,6 +31,7 @@ class Projects extends Component {
                 <MDBCarouselCaption>
                   <h3 className="h3-responsive">Friend Finder</h3>
                   <p>A NodeJS app with Express Servers and Jquery</p>
+                 <span><MDBBtn  gradient="peach">View Code</MDBBtn><MDBBtn  gradient="blue">View Live APP</MDBBtn></span> 
                   <p>Find out the answer to who should be your friend. Life's greatest mystery!</p>
                 </MDBCarouselCaption>
               </MDBCarouselItem>
@@ -44,6 +46,7 @@ class Projects extends Component {
                 </MDBView>
                 <MDBCarouselCaption>
                   <h3 className="h3-responsive">Jquery Trivia Game</h3>
+                  <span><MDBBtn  gradient="peach">View Code</MDBBtn><MDBBtn  gradient="blue">View Live APP</MDBBtn></span>
                   <p>One of my first apps. Demonstrates my problem soling abilities and Jquery abilities.</p>
                 </MDBCarouselCaption>
               </MDBCarouselItem>
@@ -57,13 +60,30 @@ class Projects extends Component {
                 <MDBMask overlay="black-slight" />
                 </MDBView>
                 <MDBCarouselCaption>
-                  <h3 className="h3-responsive" text="danger">Slight Mast</h3>
-                  <p>Third text</p>
+                  <h3 className="h3-responsive">New York Times</h3>
+                  <span><MDBBtn  gradient="peach">View Code</MDBBtn><MDBBtn  gradient="blue">View Live APP</MDBBtn></span>
+                  <p>Web Scraping with Mongo</p>
+                </MDBCarouselCaption>
+              </MDBCarouselItem>
+              <MDBCarouselItem itemId="4">
+                <MDBView>
+                  <img
+                    className="d-block w-100"
+                    src="https://newmediarockstars.com/wp-content/uploads/2013/03/spotify-1.jpg"
+                    alt="Third slide"
+                  />
+                <MDBMask overlay="black-slight" />
+                </MDBView>
+                <MDBCarouselCaption>
+                  <h3 className="h3-responsive">Spotify API</h3>
+                  <span><MDBBtn  gradient="peach">View Code</MDBBtn><MDBBtn  gradient="blue">View Live APP</MDBBtn></span>
+                  <p>Built with NodeJS</p>
                 </MDBCarouselCaption>
               </MDBCarouselItem>
             </MDBCarouselInner>
           </MDBCarousel>
           </MDBContainer>
+
         );
       }
   

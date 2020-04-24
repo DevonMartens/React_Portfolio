@@ -3,7 +3,6 @@ import './App.css';
 import { Layout, Header, Navigation, Drawer, Content} from 'react-mdl';
 import Main from './components/main';
 import { BrowserRouter, Route } from 'react-router-dom';
-import aboutMe from './components/aboutMe';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 

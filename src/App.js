@@ -6,6 +6,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css'
+import  DevonCard from './components/DevonCard';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
                 <Link className="text-dark text-center" to="/contact">Contact</Link>
                 </BrowserRouter>
             </Navigation>
+          
         </Drawer>
         <Content>
             <div className="page-content" />

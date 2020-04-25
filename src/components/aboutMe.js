@@ -8,24 +8,28 @@ import headShot from '../images/0.jpg';
 class aboutMe extends Component {
     render() {
     return(
-      
-                
         <Jumbotron  style={{ background: 'url(https://pix10.agoda.net/geo/city/2045/1_2045_02.jpg?s=1920x822)'}}>
         <Container>
  
-   <div className="row">
+<div className="row">
        <div className="col-3" style={{  
-         background: 'url(https://gifimage.net/wp-content/uploads/2017/10/coding-gif-8.gif)',
+         background: 'url(https://thumbs.gfycat.com/ShallowAccurateBrownbear-size_restricted.gif)',
          backgroundRepeat: 'none',
          
          }}>
              <Container >
-          <img  style ={{opacity: 8 }}src={headShot} atl="devon"></img>
+           
+          <img  className="img-fluid rounded-circle hoverable" style ={{opacity: 8 }}src={headShot} atl="devon"></img>
           </Container>
           </div>
+          </div> 
+          <div className="col-9">
+              </div>
+              <div className="row">
+              <div className="col-12">
         <h3 className="mt-5">Devon's Coding Abilities</h3> 
-        </div> 
-
+       
+      
         <Card>
         <AnimatedTypingComponent></AnimatedTypingComponent>
        
@@ -34,8 +38,11 @@ class aboutMe extends Component {
   
    </ChartsPage>
    </Card>
+   </div> 
+   </div> 
    </Container>
 </Jumbotron>
+
     )
     }
     

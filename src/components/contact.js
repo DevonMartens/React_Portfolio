@@ -1,47 +1,131 @@
-import React, { Component } from  'react';
+import React, {Component} from 'react';
+import validator from 'validator';
+import FormError from './FormErrors';
+import { ChipContact } from 'react-mdl';
+import { Form } from 'react-bootstrap';
+require('dotenv').config()
 
-
+const sgMail = require('@sendgrid/mail');
 
 class Contact extends Component {
-        constructor(props) {
-          super(props);
-          this.state = {
-            name: '',
+    constructor(props) {
+        super(props);
+        this.state = {
+            fName: '',
+            lName: '',
             email: '',
-            message: ''
-          }
+            tel: '',
+            message:'',
+            formValidity: false,
+            submitDisabled: false,
+            formErrors: {
+                email: 'Please Enter a valid Email',
+                name: 'First and last names should contain only alphabet characters',
+                tel: 'Telephone can contain only 10 numeric characters (e.g. 3057778888)'
+            },
+        };
+
+        const SENDGRID_API_KEY = process.env.SENDGRID_API_KEY;
+        sgMail.setApiKey(SENDGRID_API_KEY);
+
+        this.changeValue = this.changeValue.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+
+    };
+
+    changeValue = event => {
+        this.setState({
+            [event.target.name]: event.target.value,
+        });
+    };
+
+    onSubmit = (event) => {
+        event.preventDefault();
+
+        let formValidity = true;
+        let errorType = undefined;
+
+        const MSG = {
+            to: 'dmmartens91@gmail.com',
+            from: "dmmartens91@gmail.com",
+            subject: 'Contact from Website',
+            text: ' ',
+            html: '<div style="text-align:center;font-size:22px">' +
+            '<h2>You have received a new lead!</h2>' +
+            '<ul style="text-align: left;font-size:16px">' +
+            '<li>First Name: ' + this.state.fName + '</li>' +
+            '<li>Last Name: ' + this.state.lName + '</li>' +
+            '<li>Mail Address: ' + this.state.email + '</li>' +
+            '<li>Phone Number: ' + this.state.tel + '</li>' +
+            '</ul>' +
+            '</div>',
+        };
+
+        if (!validator.isEmail(this.state.email)) {
+            formValidity = false;
+            errorType = this.state.formErrors.email
+        } else if (!validator.isAlpha(this.state.fName) || !validator.isAlpha(this.state.lName)) {
+            formValidity = false;
+            errorType = this.state.formErrors.name
+        } else if (!validator.isMobilePhone(this.state.tel, 'en-US')) {
+            formValidity = false;
+            errorType = this.state.formErrors.tel
         }
-      render() {
-       return(
-         <div className="App">
-         <form id="contact-form" onSubmit={this.handleSubmit.bind(this)} method="POST">
-          <div className="form-group">
-              <label htmlFor="name">Name</label>
-              <input type="text" className="form-control" value={this.state.name} onChange={this.onNameChange.bind(this)} />
-          </div>
-          <div className="form-group">
-              <label htmlFor="exampleInputEmail1">Email address</label>
-              <input type="email" className="form-control" aria-describedby="emailHelp" value={this.state.email} onChange={this.onEmailChange.bind(this)} />
-          </div>
-          <div className="form-group">
-              <label htmlFor="message">Message</label>
-              <textarea className="form-control" rows="5" value={this.state.message} onChange={this.onMessageChange.bind(this)} />
-          </div>
-          <button type="submit" className="btn btn-primary">Submit</button>
-          </form>
-          </div>
-       );
-      }
-        onNameChange(event) {
-          this.setState({name: event.target.value})
+        if (!formValidity) {
+            this.setState({
+                formValidity,
+                errorType
+            })
+        } else {
+            this.setState({
+                formValidity,
+                errorType: "Success, we'll get back to you shortly!",
+                submitDisabled: false,
+                fName: '',
+                lName: '',
+                email: '',
+                tel: ''
+            }, () => sgMail.send(MSG))
         }
-        onEmailChange(event) {
-          this.setState({email: event.target.value})
-        }
-        onMessageChange(event) {
-          this.setState({message: event.target.value})
-        }
-      handleSubmit(event) {
-      }
-      }
-      export default Contact;
+    };
+
+    render() {
+        return (
+        
+          <form id="contact-form">
+             <div className="form-group">
+        <label htmlFor="name">Name</label>
+                <input type="text" className="form-control"
+                    placeholder="First Name"
+                    value={this.state.fName}
+                    name="fName"
+                    onChange={event => this.changeValue(event)}/>
+                    </div>
+
+                <input
+                    placeholder="Last Name"
+                    value={this.state.lName}
+                    name="lName"
+                    onChange={event => this.changeValue(event)}
+                /><br/><br/>
+                <input
+                    placeholder="Email"
+                    value={this.state.email}
+                    name="email"
+                    onChange={event => this.changeValue(event)}
+                /><br/><br/>
+                <input
+                    placeholder="Telephone + area code"
+                    value={this.state.tel}
+                    name="tel"
+                    onChange={event => this.changeValue(event)}
+                /><br/><br/>
+                <button disabled={this.state.submitDisabled} onClick={(event) => this.onSubmit(event)}>Submit</button>
+                <FormError errorType={this.state.errorType}/>
+            </form>
+         
+        );
+    }
+}
+
+export default Contact;
